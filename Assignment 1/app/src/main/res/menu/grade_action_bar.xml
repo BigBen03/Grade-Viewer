@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <!--<item
+            android:id="@+id/action_options"
+            android:title="@string/action_options"
+            app:showAsAction="never"/>-->
+
+        <item
+            android:id="@+id/action_toLetter"
+            android:icon="@drawable/ic_font_download_white_24dp"
+            android:title="@string/action_toLetter"
+            app:showAsAction="ifRoom"
+            android:visible="true"/>
+
+
+        <item
+            android:id="@+id/action_toPercentage"
+            android:icon="@drawable/ic_looks_one_white_24dp"
+            android:title="@string/action_toPercentage"
+            app:showAsAction="ifRoom"
+            android:visible="false"/>
+
+</menu>

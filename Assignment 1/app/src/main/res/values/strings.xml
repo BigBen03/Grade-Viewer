@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Grade Viewer: Assignment #1</string>
+    <string name="ProfileName">Profile Name</string>
+    <string name="Name">Name</string>
+    <string name="Age">Age</string>
+    <string name="Student_ID">Student_ID</string>
+    <string name="action_edit">Edit</string>
+
+    <string name="courseList">Course List</string>
+    <string name="action_gradeFormat">Change Grade Format</string>
+    <string name="action_options">Options</string>
+    <string name="action_toLetter">To Letter Grades</string>
+    <string name="action_toPercentage">To Percentage Grade</string>
+    <bool name="gradeFormat">false</bool>
+</resources>
