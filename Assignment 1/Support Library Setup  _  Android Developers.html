@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)https://developer.android.com/topic/libraries/support-library/setup -->
+<html lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+    <meta name="google-signin-client-id" content="721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com">
+    <meta name="google-signin-scope" content="profile email">
+    <meta property="og:site_name" content="Android Developers">
+    <meta property="og:type" content="website">
+    
+          <meta name="theme-color" content="#3ddc84">
+    
+    
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="https://developer.android.com/_pwa/android/manifest.json" crossorigin="use-credentials">
+    <link rel="preconnect" href="https://www.gstatic.com/" crossorigin="">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin="">
+    <link rel="stylesheet" href="./Support Library Setup  _  Android Developers_files/css">
+        <link rel="stylesheet" href="./Support Library Setup  _  Android Developers_files/app.css">
+    <noscript>
+      <link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/v0e4e104495105e7f1e0709003bc8740507426db77c74cec8d9625a7c35862984/android/css/ce_bundle.css">
+    </noscript>
+    <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/v0e4e104495105e7f1e0709003bc8740507426db77c74cec8d9625a7c35862984/android/images/favicon.png">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/v0e4e104495105e7f1e0709003bc8740507426db77c74cec8d9625a7c35862984/android/images/touchicon-180.png"><link rel="canonical" href="https://developer.android.com/topic/libraries/support-library/setup"><link rel="search" type="application/opensearchdescription+xml" title="Android Developers" href="https://developer.android.com/s/opensearch.xml">      
+<title>Support Library Setup &nbsp;|&nbsp; Android Developers</title>
+
+<meta property="og:title" content="Support Library Setup  |  Android Developers">
+  <meta name="description" content="How to set up your app to use the Android Support Libraries.">
+  <meta property="og:description" content="How to set up your app to use the Android Support Libraries.">
+
+
+  <meta property="og:url" content="https://developer.android.com/topic/libraries/support-library/setup">
+
+  <meta property="og:image" content="https://developer.android.com/images/android-developers.png">
+  <meta property="og:image:secure_url" content="https://developer.android.com/images/android-developers.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:locale" content="en">
+  <meta name="twitter:card" content="summary_large_image">
+
+
+
+
+  
+  
+  
+  
+  
+
+    <script type="text/javascript" async="" src="./Support Library Setup  _  Android Developers_files/linkid.js.download"></script><script async="" src="./Support Library Setup  _  Android Developers_files/gtm.js.download"></script><script src="./Support Library Setup  _  Android Developers_files/webcomponents-lite.js.download"></script><script src="./Support Library Setup  _  Android Developers_files/devsite_app.js.download"></script><script src="./Support Library Setup  _  Android Developers_files/analytics.js.download"></script><style type="text/css"></style><script src="./Support Library Setup  _  Android Developers_files/devsite_code_module.js.download"></script><link rel="stylesheet" type="text/css" href="./Support Library Setup  _  Android Developers_files/devsite_code.css"><script src="./Support Library Setup  _  Android Developers_files/devsite_heading_module.js.download"></script><link rel="stylesheet" type="text/css" href="./Support Library Setup  _  Android Developers_files/devsite_heading.css"><script src="./Support Library Setup  _  Android Developers_files/devsite_heading_link_module.js.download"></script><script src="./Support Library Setup  _  Android Developers_files/devsite_page_rating_module.js.download"></script><link rel="stylesheet" type="text/css" href="./Support Library Setup  _  Android Developers_files/devsite_page_rating.css"><script src="./Support Library Setup  _  Android Developers_files/devsite_snackbar_module.js.download"></script><link rel="stylesheet" type="text/css" href="./Support Library Setup  _  Android Developers_files/devsite_snackbar.css"><script src="./Support Library Setup  _  Android Developers_files/devsite_tooltip_module.js.download"></script><link rel="stylesheet" type="text/css" href="./Support Library Setup  _  Android Developers_files/devsite_tooltip.css"><link rel="stylesheet" type="text/css" href="./Support Library Setup  _  Android Developers_files/devsite_content_footer.css"></head>
+  <body type="article" theme="android-theme" class="" layout="docs" ready="">
+    <devsite-progress id="app-progress"></devsite-progress>
+    <section class="devsite-wrapper"><devsite-header top-row--height="48" bottom-row--height="104" bottom-tabs--height="48" fixed="" offset="104" bottom-row--hidden="">
+      
+
+
+
+
+
+
+
+<div class="devsite-header--inner">
+  <div class="devsite-top-logo-row-wrapper-wrapper">
+    <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row">
+        <button type="button" id="devsite-hamburger-menu" class="devsite-header-icon-button button-flat material-icons gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Navigation menu button" aria-label="Open menu">
+        </button>
+        <div class="devsite-product-name-wrapper">
+  <a href="https://developer.android.com/" class="devsite-site-logo-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav" track-name="androiddevelopers" track-metadata-position="nav" track-metadata-eventdetail="nav">
+  <img src="./Support Library Setup  _  Android Developers_files/lockup.svg" class="devsite-site-logo" alt="Android Developers">
+</a>
+
+  <span class="devsite-product-name">
+    <ul class="devsite-breadcrumb-list">
+    <li class="devsite-breadcrumb-item
+             ">
+                              </li>
+  </ul>
+  </span>
+</div>
+        <div class="devsite-top-logo-row-middle">
+          <div class="devsite-header-upper-tabs">
+                            <devsite-tabs class="upper-tabs" connected="">
+    
+  <div class="devsite-tabs-wrapper">
+                        <tab active="">
+            <a href="https://developer.android.com/about" class="gc-analytics-event" track-type="globalNav" track-metadata-position="nav" track-metadata-eventdetail="nav" track-name="platform" aria-label="Platform, selected" data-category="Site-Wide Custom Events" data-label="Tab: Platform">
+  Platform
+</a>
+
+          </tab>
+                                <tab>
+            <a href="https://developer.android.com/studio" class="gc-analytics-event" track-type="globalNav" track-metadata-position="nav" track-metadata-eventdetail="nav" track-name="androidStudio" data-category="Site-Wide Custom Events" data-label="Tab: Android Studio">
+  Android Studio
+</a>
+
+          </tab>
+                                <tab>
+            <a href="https://developer.android.com/distribute" class="gc-analytics-event" track-type="globalNav" track-metadata-position="nav" track-metadata-eventdetail="nav" track-name="googlePlay" data-category="Site-Wide Custom Events" data-label="Tab: Google Play">
+  Google Play
+</a>
+
+          </tab>
+                                <tab>
+            <a href="https://developer.android.com/jetpack" class="gc-analytics-event" track-type="globalNav" track-metadata-position="nav" track-metadata-eventdetail="nav" track-name="jetpack" data-category="Site-Wide Custom Events" data-label="Tab: Jetpack">
+  Jetpack
+</a>
+
+          </tab>
+                                
+                                
+                                
+                  <tab overflow-tab=""><a href="https://developer.android.com/topic/libraries/support-library/setup#" class="devsite-icon devsite-icon-arrow-drop-down">More</a><div class="devsite-tabs-overflow-menu" scrollbars="" hidden=""><tab>
+            <a href="https://developer.android.com/kotlin" class="gc-analytics-event" track-type="globalNav" track-metadata-position="nav" track-metadata-eventdetail="nav" track-name="kotlin" data-category="Site-Wide Custom Events" data-label="Tab: Kotlin">
+  Kotlin
+</a>
+
+          </tab><tab>
+            <a href="https://developer.android.com/docs" class="gc-analytics-event" track-type="globalNav" track-metadata-position="nav" track-metadata-eventdetail="nav" track-name="docs" data-category="Site-Wide Custom Events" data-label="Tab: Docs">
+  Docs
+</a>
+
+          </tab><tab>
+            <a href="https://developer.android.com/news" class="gc-analytics-event" track-type="globalNav" track-metadata-position="nav" track-metadata-eventdetail="nav" track-name="news" data-category="Site-Wide Custom Events" data-label="Tab: News">
+  News
+</a>
+
+          </tab></div></tab></div></devsite-tabs>
+
+
+                       </div>
+          <devsite-search enable-signin="" enable-search="" enable-suggestions="" enable-query-completion="" project-name="Android Developers" tenant-name="Android Developers">
+  <form class="devsite-search-form" action="https://developer.android.com/s/results" method="GET">
+    <div class="devsite-search-container">
+      <div class="devsite-searchbox">
+                <input placeholder="Search" type="text" class="devsite-search-field devsite-search-query" name="q" value="" autocomplete="off" aria-label="Search box">
+        <div class="devsite-search-image material-icons" aria-hidden="true"></div>
+      </div>
+      <button type="button" search-open="" class="devsite-search-button devsite-header-icon-button button-flat material-icons" aria-label="Open search box"></button>
+    </div>
+  <div class="devsite-popout"><div class="devsite-popout-result devsite-suggest-results-container" devsite-hide="" role="menu" aria-haspopup="true"></div></div></form>
+  <button type="button" search-close="" class="devsite-search-button devsite-header-icon-button button-flat material-icons" aria-label="Close search box"></button>
+</devsite-search>
+
+        <div class="devsite-search-background" style="opacity: 1;"></div></div>
+
+        
+        <devsite-language-selector>
+  <devsite-select class="devsite-language-selector-menu">
+    <select class="devsite-language-selector-select" name="language" track-name="click" track-type="languageSelector">
+                <option>Language</option>
+              <option value="id" track-metadata-original-language="en" track-metadata-selected-language="id" track-name="changed" track-type="languageSelector">
+        Bahasa Indonesia
+      </option>
+          <option value="de" track-metadata-original-language="en" track-metadata-selected-language="de" track-name="changed" track-type="languageSelector">
+        Deutsch
+      </option>
+          <option value="en" track-metadata-original-language="en" track-metadata-selected-language="en" track-name="changed" track-type="languageSelector">
+        English
+      </option>
+          <option value="es" track-metadata-original-language="en" track-metadata-selected-language="es" track-name="changed" track-type="languageSelector">
+        Español
+      </option>
+          <option value="es_419" track-metadata-original-language="en" track-metadata-selected-language="es_419" track-name="changed" track-type="languageSelector">
+        Español – América Latina
+      </option>
+          <option value="fr" track-metadata-original-language="en" track-metadata-selected-language="fr" track-name="changed" track-type="languageSelector">
+        Français
+      </option>
+          <option value="pt_br" track-metadata-original-language="en" track-metadata-selected-language="pt_br" track-name="changed" track-type="languageSelector">
+        Português – Brasil
+      </option>
+          <option value="vi" track-metadata-original-language="en" track-metadata-selected-language="vi" track-name="changed" track-type="languageSelector">
+        Tiếng Việt
+      </option>
+          <option value="tr" track-metadata-original-language="en" track-metadata-selected-language="tr" track-name="changed" track-type="languageSelector">
+        Türkçe
+      </option>
+          <option value="ru" track-metadata-original-language="en" track-metadata-selected-language="ru" track-name="changed" track-type="languageSelector">
+        Русский
+      </option>
+          <option value="th" track-metadata-original-language="en" track-metadata-selected-language="th" track-name="changed" track-type="languageSelector">
+        ภาษาไทย
+      </option>
+          <option value="zh_cn" track-metadata-original-language="en" track-metadata-selected-language="zh_cn" track-name="changed" track-type="languageSelector">
+        中文 – 简体
+      </option>
+          <option value="zh_tw" track-metadata-original-language="en" track-metadata-selected-language="zh_tw" track-name="changed" track-type="languageSelector">
+        中文 – 繁體
+      </option>
+          <option value="ja" track-metadata-original-language="en" track-metadata-selected-language="ja" track-name="changed" track-type="languageSelector">
+        日本語
+      </option>
+          <option value="ko" track-metadata-original-language="en" track-metadata-selected-language="ko" track-name="changed" track-type="languageSelector">
+        한국어
+      </option>
+        </select>
+  <div class="devsite-select"><button type="button" class="devsite-select-toggle">Language</button><ul class="devsite-select-list" scrollbars=""><li class="devsite-select-item" data-index="0">Language</li><li class="devsite-select-item" data-index="1">Bahasa Indonesia</li><li class="devsite-select-item" data-index="2">Deutsch</li><li class="devsite-select-item" data-index="3">English</li><li class="devsite-select-item" data-index="4">Español</li><li class="devsite-select-item" data-index="5">Español – América Latina</li><li class="devsite-select-item" data-index="6">Français</li><li class="devsite-select-item" data-index="7">Português – Brasil</li><li class="devsite-select-item" data-index="8">Tiếng Việt</li><li class="devsite-select-item" data-index="9">Türkçe</li><li class="devsite-select-item" data-index="10">Русский</li><li class="devsite-select-item" data-index="11">ภาษาไทย</li><li class="devsite-select-item" data-index="12">中文 – 简体</li><li class="devsite-select-item" data-index="13">中文 – 繁體</li><li class="devsite-select-item" data-index="14">日本語</li><li class="devsite-select-item" data-index="15">한국어</li></ul></div></devsite-select>
+</devsite-language-selector>
+
+
+        
+                                      <devsite-user sign-in-url="https://developer.android.com/_d/signin?continue=https%3A%2F%2Fdeveloper.android.com%2Ftopic%2Flibraries%2Fsupport-library%2Fsetup&amp;prompt=select_account" sign-out-url="https://developer.android.com/_d/signout?continue=https%3A%2F%2Fdeveloper.android.com%2Ftopic%2Flibraries%2Fsupport-library%2Fsetup" url="https://developer.android.com/_d/signout?continue=https%3A%2F%2Fdeveloper.android.com%2Ftopic%2Flibraries%2Fsupport-library%2Fsetup"><div class="ogb-wrapper ogb-si"><a href="https://developer.android.com/_d/signin?continue=https%3A%2F%2Fdeveloper.android.com%2Ftopic%2Flibraries%2Fsupport-library%2Fsetup&amp;prompt=select_account" class="devsite-user-signin button devsite-top-button">
+  Sign in
+</a></div></devsite-user>
+                         </div>    </div>  </div>
+  <div class="devsite-collapsible-section
+    " style="transform: translate3d(0px, -104px, 0px);">
+    <div class="devsite-header-background">
+                        <div class="devsite-product-id-row">
+            <div class="devsite-product-description-row">
+                                                <ul class="devsite-breadcrumb-list">
+    <li class="devsite-breadcrumb-item
+             ">
+                    <a href="https://developer.android.com/about" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Lower Header" data-value="1">
+            About the platform
+      
+  </a>
+        </li>
+  </ul>
+                                                        </div>
+                                                                            </div>
+                                      <div class="devsite-doc-set-nav-row">
+                                                      <devsite-tabs class="lower-tabs" connected="">
+    
+  <div class="devsite-tabs-wrapper">
+                        <tab>
+            <a href="https://developer.android.com/about" class="gc-analytics-event" track-type="globalNav" track-metadata-position="nav" track-metadata-eventdetail="nav" track-name="" data-category="Site-Wide Custom Events" data-label="Tab: Overview">
+  Overview
+</a>
+
+          </tab>
+                                <tab>
+            <a href="https://developer.android.com/about/versions/10" class="gc-analytics-event" track-type="globalNav" track-metadata-position="nav" track-metadata-eventdetail="nav" track-name="" data-category="Site-Wide Custom Events" data-label="Tab: Releases">
+  Releases
+</a>
+
+          </tab>
+                                <tab>
+            <a href="https://developer.android.com/guide/platform" class="gc-analytics-event" track-type="globalNav" track-metadata-position="nav" track-metadata-eventdetail="nav" track-name="" data-category="Site-Wide Custom Events" data-label="Tab: Technology">
+  Technology
+</a>
+
+          </tab>
+                                <tab active="">
+            <a href="https://developer.android.com/topic/libraries/support-library" class="gc-analytics-event" track-type="globalNav" track-metadata-position="nav" track-metadata-eventdetail="nav" track-name="" aria-label="Libraries, selected" data-category="Site-Wide Custom Events" data-label="Tab: Libraries">
+  Libraries
+</a>
+
+          </tab>
+                                <tab>
+            <a href="https://developer.android.com/games" class="gc-analytics-event" track-type="globalNav" track-metadata-position="nav" track-metadata-eventdetail="nav" track-name="" data-category="Site-Wide Custom Events" data-label="Tab: Games">
+  Games
+</a>
+
+          </tab>
+                                <tab>
+            <a href="https://developer.android.com/ml" class="gc-analytics-event" track-type="globalNav" track-metadata-position="nav" track-metadata-eventdetail="nav" track-name="" data-category="Site-Wide Custom Events" data-label="Tab: Machine Learning">
+  Machine Learning
+</a>
+
+          </tab>
+                                <tab>
+            <a href="https://developer.android.com/privacy" class="gc-analytics-event" track-type="globalNav" track-metadata-position="nav" track-metadata-eventdetail="nav" track-name="" data-category="Site-Wide Custom Events" data-label="Tab: Privacy">
+  Privacy
+</a>
+
+          </tab>
+                  <tab overflow-tab="" hidden=""><a href="https://developer.android.com/topic/libraries/support-library/setup#" class="devsite-icon devsite-icon-arrow-drop-down">More</a><div class="devsite-tabs-overflow-menu" scrollbars="" hidden=""></div></tab></div></devsite-tabs>
+
+
+                            </div>
+          </div>  </div></div>
+  
+
+  </devsite-header>      <div class="devsite-book-nav-bg" fixed=""></div><devsite-book-nav scrollbars="" animatable="" fixed="" style="top: 152px; max-height: 826px; transform: translate3d(0px, -104px, 0px);">
+                  
+
+
+
+
+
+<nav class="devsite-book-nav devsite-nav nocontent">
+  <div class="devsite-mobile-header">
+    <button type="button" id="devsite-close-nav" class="devsite-header-icon-button button-flat material-icons gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Close navigation" aria-label="Close navigation">
+    </button>
+    <div class="devsite-product-name-wrapper">
+  <a href="https://developer.android.com/" class="devsite-site-logo-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav" track-name="androiddevelopers" track-metadata-position="nav" track-metadata-eventdetail="nav">
+  <img src="./Support Library Setup  _  Android Developers_files/lockup.svg" class="devsite-site-logo" alt="Android Developers">
+</a>
+        <span class="devsite-product-name">
+        <ul class="devsite-breadcrumb-list">
+    <li class="devsite-breadcrumb-item
+             ">
+                              </li>
+  </ul>
+      </span>
+    
+</div>  </div>
+
+  <div class="devsite-book-nav-wrapper">
+    <div class="devsite-mobile-nav-top">
+              <ul class="devsite-nav-list">
+                      <li class="devsite-nav-item">
+                  <a href="https://developer.android.com/about" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Responsive Tab: Platform"><span>
+      </span><span class="devsite-nav-text" tooltip=""><span>
+      Platform
+   </span></span><span>
+        </span></a>
+  
+                                            <ul class="devsite-nav-responsive-tabs">
+                                                                                                  <li class="devsite-nav-item">
+    <a href="https://developer.android.com/about" class="devsite-nav-title gc-analytics-event
+                            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Overview"><span>
+      </span><span class="devsite-nav-text" tooltip=""><span>
+      Overview
+   </span></span><span>
+        </span></a>
+  </li>
+
+                                                                                                  <li class="devsite-nav-item">
+    <a href="https://developer.android.com/about/versions/10" class="devsite-nav-title gc-analytics-event
+              devsite-nav-has-children              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Releases"><span>
+      </span><span class="devsite-nav-text" tooltip="" menu="_book"><span>
+      Releases
+   </span></span><span>
+        </span><span class="devsite-nav-icon material-icons" data-icon="forward" menu="_book"><span>
+    </span></span><span>
+        </span></a>
+  </li>
+
+                                                                                                  <li class="devsite-nav-item">
+    <a href="https://developer.android.com/guide/platform" class="devsite-nav-title gc-analytics-event
+              devsite-nav-has-children              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Technology"><span>
+      </span><span class="devsite-nav-text" tooltip="" menu="_book"><span>
+      Technology
+   </span></span><span>
+        </span><span class="devsite-nav-icon material-icons" data-icon="forward" menu="_book"><span>
+    </span></span><span>
+        </span></a>
+  </li>
+
+                                                                                                  <li class="devsite-nav-item">
+    <a href="https://developer.android.com/topic/libraries/support-library" class="devsite-nav-title gc-analytics-event devsite-nav-has-children" data-category="Site-Wide Custom Events" data-label="Responsive Tab: Libraries"><span>
+      </span><span class="devsite-nav-text" tooltip="" menu="_book"><span>
+      Libraries
+   </span></span><span>
+        </span><span class="devsite-nav-icon material-icons" data-icon="forward" menu="_book"><span>
+    </span></span><span>
+        </span></a>
+  </li>
+
+                                                                                                  <li class="devsite-nav-item">
+    <a href="https://developer.android.com/games" class="devsite-nav-title gc-analytics-event
+                            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Games"><span>
+      </span><span class="devsite-nav-text" tooltip=""><span>
+      Games
+   </span></span><span>
+        </span></a>
+  </li>
+
+                                                                                                  <li class="devsite-nav-item">
+    <a href="https://developer.android.com/ml" class="devsite-nav-title gc-analytics-event
+              devsite-nav-has-children              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Machine Learning"><span>
+      </span><span class="devsite-nav-text" tooltip="" menu="_book"><span>
+      Machine Learning
+   </span></span><span>
+        </span><span class="devsite-nav-icon material-icons" data-icon="forward" menu="_book"><span>
+    </span></span><span>
+        </span></a>
+  </li>
+
+                                                                                                  <li class="devsite-nav-item">
+    <a href="https://developer.android.com/privacy" class="devsite-nav-title gc-analytics-event
+                            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Privacy"><span>
+      </span><span class="devsite-nav-text" tooltip=""><span>
+      Privacy
+   </span></span><span>
+        </span></a>
+  </li>
+
+                                  </ul>
+                          </li>
+                      <li class="devsite-nav-item">
+                  <a href="https://developer.android.com/studio" class="devsite-nav-title gc-analytics-event
+                            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Android Studio"><span>
+      </span><span class="devsite-nav-text" tooltip=""><span>
+      Android Studio
+   </span></span><span>
+        </span></a>
+  
+                                        </li>
+                      <li class="devsite-nav-item">
+                  <a href="https://developer.android.com/distribute" class="devsite-nav-title gc-analytics-event
+                            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Google Play"><span>
+      </span><span class="devsite-nav-text" tooltip=""><span>
+      Google Play
+   </span></span><span>
+        </span></a>
+  
+                                        </li>
+                      <li class="devsite-nav-item">
+                  <a href="https://developer.android.com/jetpack" class="devsite-nav-title gc-analytics-event
+                            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Jetpack"><span>
+      </span><span class="devsite-nav-text" tooltip=""><span>
+      Jetpack
+   </span></span><span>
+        </span></a>
+  
+                                        </li>
+                      <li class="devsite-nav-item">
+                  <a href="https://developer.android.com/kotlin" class="devsite-nav-title gc-analytics-event
+                            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Kotlin"><span>
+      </span><span class="devsite-nav-text" tooltip=""><span>
+      Kotlin
+   </span></span><span>
+        </span></a>
+  
+                                        </li>
+                      <li class="devsite-nav-item">
+                  <a href="https://developer.android.com/docs" class="devsite-nav-title gc-analytics-event
+                            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Docs"><span>
+      </span><span class="devsite-nav-text" tooltip=""><span>
+      Docs
+   </span></span><span>
+        </span></a>
+  
+                                        </li>
+                      <li class="devsite-nav-item">
+                  <a href="https://developer.android.com/news" class="devsite-nav-title gc-analytics-event
+                            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: News"><span>
+      </span><span class="devsite-nav-text" tooltip=""><span>
+      News
+   </span></span><span>
+        </span></a>
+  
+                                        </li>
+                    
+                  </ul>
+          </div>
+          <div class="devsite-mobile-nav-bottom">
+                            <ul class="devsite-nav-list" menu="_book">
+            <li class="devsite-nav-item"><a href="https://developer.android.com/topic/libraries/support-library" class="devsite-nav-title"><span class="devsite-nav-text" tooltip=""><span>Support Library Overview</span></span></a></li>
+  <li class="devsite-nav-item"><a href="https://developer.android.com/topic/libraries/support-library/features" class="devsite-nav-title"><span class="devsite-nav-text" tooltip=""><span>Features</span></span></a></li>
+  <li class="devsite-nav-item"><a href="https://developer.android.com/topic/libraries/support-library/packages" class="devsite-nav-title"><span class="devsite-nav-text" tooltip=""><span>Packages</span></span></a></li>
+  <li class="devsite-nav-item"><a href="https://developer.android.com/topic/libraries/support-library/setup" class="devsite-nav-title devsite-nav-active"><span class="devsite-nav-text" tooltip=""><span>Setup</span></span></a></li>
+  <li class="devsite-nav-item           devsite-nav-expandable"><devsite-expandable-nav collapsed="" connected="" animatable="">
+    <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button"><span class="devsite-nav-text" tooltip=""><span>Revision History</span></span></div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developer.android.com/topic/libraries/support-library/revisions" class="devsite-nav-title"><span class="devsite-nav-text" tooltip=""><span>Recent Revisions</span></span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/topic/libraries/support-library/rev-archive" class="devsite-nav-title"><span class="devsite-nav-text" tooltip=""><span>Revision Archive</span></span></a></li></ul></devsite-expandable-nav></li>
+          </ul>
+                                                                                                                                                                                                  </div>
+      </div>
+</nav>
+              </devsite-book-nav>
+      <section id="gc-wrapper" style="margin-top: 152px;">
+        <main role="main" class="devsite-main-content" has-book-nav="" has-toc="">
+          <devsite-toc class="devsite-nav devsite-toc" visible="" fixed="" max-height="778" offset="104"><ul class="devsite-nav-list" scrollbars="" style="max-height: 778px; transform: translate3d(0px, -104px, 0px); max-width: 136px;"><li class="devsite-nav-item devsite-nav-heading devsite-toc-toggle"><a href="https://developer.android.com/topic/libraries/support-library/setup#top_of_page" class="devsite-nav-title"><span class="devsite-nav-text" tooltip="">Contents</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/topic/libraries/support-library/setup#choosing" class="devsite-nav-title"><span class="devsite-nav-text" tooltip="">Choosing Support Libraries</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/topic/libraries/support-library/setup#add-library" class="devsite-nav-title devsite-nav-active"><span class="devsite-nav-text" tooltip="">Adding Support Libraries</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/topic/libraries/support-library/setup#using-apis" class="devsite-nav-title"><span class="devsite-nav-text" tooltip="">Using Support Library APIs</span></a><ul class="devsite-nav-list"><li class="devsite-nav-item"><a href="https://developer.android.com/topic/libraries/support-library/setup#manifest" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="2.0"><span class="devsite-nav-text" tooltip="">Manifest Declaration Changes</span></a></li></ul></li></ul></devsite-toc>
+          <devsite-content>
+                          
+
+<article class="devsite-article">
+  <article class="devsite-article-inner">        
+    <div class="devsite-article-meta">
+      <ul class="devsite-breadcrumb-list">
+    <li class="devsite-breadcrumb-item
+             ">
+                    <a href="https://developer.android.com/" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="1">
+            Android Developers
+      
+  </a>
+        </li>
+    <li class="devsite-breadcrumb-item
+             ">
+                <div class="devsite-breadcrumb-guillemet material-icons" aria-hidden="true"></div>
+                    <a href="https://developer.android.com/about" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="2">
+            Platform
+      
+  </a>
+        </li>
+    <li class="devsite-breadcrumb-item
+             ">
+                <div class="devsite-breadcrumb-guillemet material-icons" aria-hidden="true"></div>
+                    <a href="https://developer.android.com/topic/libraries/support-library" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="3">
+            Libraries
+      
+  </a>
+        </li>
+  </ul>
+               <devsite-page-rating position="header" selected-rating="0" hover-rating-star="0">
+         <div><div class="devsite-rating-stars"><div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="1" role="button" data-title="Unusable documentation" aria-label="Site content star ratings, rating 1 out of 5"></div><div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="2" role="button" data-title="Poor documentation" aria-label="Site content star ratings, rating 2 out of 5"></div><div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="3" role="button" data-title="OK documentation" aria-label="Site content star ratings, rating 3 out of 5"></div><div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="4" role="button" data-title="Good documentation" aria-label="Site content star ratings, rating 4 out of 5"></div><div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="5" role="button" data-title="Excellent documentation" aria-label="Site content star ratings, rating 5 out of 5"></div></div><div class="devsite-rating-internal"><span class="devsite-rating-stats"></span></div></div></devsite-page-rating>
+          </div>
+
+              <devsite-heading text="Support Library Setup" for="support-library-setup" level="h1"><h1 class="devsite-page-title" is-upgraded="" id="support-library-setup">Support Library Setup</h1></devsite-heading>
+    
+    <devsite-toc class="devsite-nav devsite-toc-embedded" devsite-toc-embedded="" visible=""><ul class="devsite-nav-list" scrollbars=""><li class="devsite-nav-item devsite-nav-heading devsite-toc-toggle"><a href="https://developer.android.com/topic/libraries/support-library/setup#top_of_page" class="devsite-nav-title"><span class="devsite-nav-text" tooltip="">Contents</span></a><button type="button" title="Expand/collapse contents" class="devsite-nav-show-all button-transparent material-icons"></button></li><li class="devsite-nav-item"><a href="https://developer.android.com/topic/libraries/support-library/setup#choosing" class="devsite-nav-title"><span class="devsite-nav-text" tooltip="">Choosing Support Libraries</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/topic/libraries/support-library/setup#add-library" class="devsite-nav-title"><span class="devsite-nav-text" tooltip="">Adding Support Libraries</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/topic/libraries/support-library/setup#using-apis" class="devsite-nav-title"><span class="devsite-nav-text" tooltip="">Using Support Library APIs</span></a><ul class="devsite-nav-list"><li class="devsite-nav-item"><a href="https://developer.android.com/topic/libraries/support-library/setup#manifest" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="2.0"><span class="devsite-nav-text" tooltip="">Manifest Declaration Changes</span></a></li></ul></li><li class="devsite-toc-toggle"><button type="button" class="button-flat devsite-nav-more-items material-icons" title="Expand/collapse contents" aria-hidden="true"></button></li></ul></devsite-toc>
+
+    <div class="devsite-article-body clearfix
+      ">
+
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p class="note">
+  <strong>Note:</strong> With the release of Android 9.0 (API level 28) there is
+  a new version of the support library called
+  <a href="https://developer.android.com/jetpack/androidx">AndroidX</a> which is part of <a href="https://developer.android.com/jetpack">Jetpack</a>.
+  The AndroidX library
+  contains the existing support library and also includes the latest Jetpack components.
+<br><br>
+  You can continue to use the support library.
+  Historical artifacts (those versioned 27 and earlier, and packaged as <code translate="no" dir="ltr">android.support.*</code>) will
+  remain available on Google Maven. However, all new library development
+  will occur in the <a href="https://developer.android.com/jetpack/androidx">AndroidX</a> library.
+<br><br>
+  We recommend using the AndroidX libraries in all new projects. You should also consider
+  <a href="https://developer.android.com/jetpack/androidx/migrate">migrating</a> existing projects to AndroidX as well.
+</p>
+
+<p>How you setup the Android Support Libraries in your development project depends on what features
+  you want to use and what range of Android platform versions you want to support with your
+  application.</p>
+
+<p>This document guides you through downloading the Support Library package and adding libraries
+  to your development environment.</p>
+
+<p class="note">The support libraries are now available through Google's Maven
+repository. We no longer support downloading the libraries through the SDK
+Manager, and that functionality will be removed soon..</p>
+
+<devsite-heading text="Choosing Support Libraries" for="choosing" level="h2" link="" toc="" back-to-top=""><h2 id="choosing" is-upgraded="">Choosing Support Libraries<a href="https://developer.android.com/topic/libraries/support-library/setup#top_of_page" class="devsite-back-to-top-link material-icons" data-title="Back to top"></a></h2></devsite-heading>
+
+<p>Before adding a Support Library to your application, decide what features you want to include
+  and the lowest Android versions you want to support. For more information on the features
+  provided by the different libraries, see
+  <a href="https://developer.android.com/tools/support-library/features.html">Support Library Features</a>.</p>
+
+
+<devsite-heading text="Adding Support Libraries" for="add-library" level="h2" link="" toc="" back-to-top=""><h2 id="add-library" is-upgraded="">Adding Support Libraries<a href="https://developer.android.com/topic/libraries/support-library/setup#top_of_page" class="devsite-back-to-top-link material-icons" data-title="Back to top"></a></h2></devsite-heading>
+
+<p>In order to use a Support Library, you must modify your application's project's
+  classpath dependencies within your development environment. You must perform this procedure for
+  each Support Library you want to use.</p>
+
+<p>To add a Support Library to your application project:</p>
+
+    <ol>
+      <li>Include Google's Maven repository in your project's
+          <code translate="no" dir="ltr">build.gradle</code> file.
+<devsite-code dark-code=""><pre class="lang-groovy" translate="no" dir="ltr" is-upgraded=""><span class="pln">allprojects </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; repositories </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; google</span><span class="pun">()</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">// If you're using a version of Gradle lower than 4.1, you must</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">// instead use:</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">//</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">// maven {</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">// &nbsp; &nbsp; url 'https://maven.google.com'</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">// }</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br></span></pre><div class="devsite-code-buttons-container"><button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-title="Dark code theme"></button><button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light" data-category="Site-Wide Custom Events" data-label="Light Code Toggle" track-type="exampleCode" track-name="lightCodeToggle" data-title="Light code theme"></button><button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-title="Copy"></button></div></devsite-code>
+      </li>
+      <li>For each module in which you want to use a Support Library, add the library in the
+        <code translate="no" dir="ltr">dependencies</code> block of the module's <code translate="no" dir="ltr">build.gradle</code> file. For
+        example, to add the v4 core-utils library, add the following:
+<devsite-code dark-code=""><pre class="lang-groovy" translate="no" dir="ltr" is-upgraded=""><span class="pln">dependencies </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">...</span><span class="pln"><br>&nbsp; &nbsp; </span><b><span class="pln">implementation </span><span class="str">"com.android.support:support-core-utils:28.0.0"</span></b><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br></span></pre><div class="devsite-code-buttons-container"><button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-title="Dark code theme"></button><button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light" data-category="Site-Wide Custom Events" data-label="Light Code Toggle" track-type="exampleCode" track-name="lightCodeToggle" data-title="Light code theme"></button><button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-title="Copy"></button></div></devsite-code>
+      </li>
+    </ol>
+
+<p class="caution">
+  <strong>Caution:</strong> Using dynamic dependencies (for example,
+  <code translate="no" dir="ltr">palette-v7:23.0.+</code>) can cause unexpected version updates and
+  regression incompatibilities. We recommend that you explicitly specify a
+  library version (for example, <code translate="no" dir="ltr">palette-v7:28.0.0</code>).
+</p>
+
+<devsite-heading text="Using Support Library APIs" for="using-apis" level="h2" link="" toc="" back-to-top=""><h2 id="using-apis" is-upgraded="">Using Support Library APIs<a href="https://developer.android.com/topic/libraries/support-library/setup#top_of_page" class="devsite-back-to-top-link material-icons" data-title="Back to top"></a></h2></devsite-heading>
+
+<p>Support Library classes that provide support for existing framework APIs typically have the
+  same name as framework class but are located in the <code translate="no" dir="ltr">android.support</code> class packages,
+  or have a <code translate="no" dir="ltr">*Compat</code> suffix.</p>
+
+<div class="caution">
+  <p><strong>Caution:</strong> When using classes from the Support Library, be certain you import
+    the class from the appropriate package. For example, when applying the <code translate="no" dir="ltr">ActionBar</code>
+    class:</p>
+  <ul>
+    <li><code translate="no" dir="ltr">android.support.v7.app.ActionBar</code> when using the Support Library.</li>
+    <li><code translate="no" dir="ltr">android.app.ActionBar</code> when developing only for API level 11 or higher.</li>
+  </ul>
+</div>
+
+<p class="note">
+  <strong>Note:</strong> After including the Support Library in your application project, we
+  strongly recommend that you <a href="https://developer.android.com/studio/build/shrink-code">shrink, obfuscate, and optimize
+  your app</a> for release. In addition to protecting your source code with obfuscation, shrinking
+  removes unused classes from any libraries you include in your application, which keeps the
+  download size of your application as small as possible.
+</p>
+
+<p>Further guidance for using some Support Library features is provided in the Android developer
+  <a href="https://developer.android.com/training/index.html">training classes</a>,
+  <a href="https://developer.android.com/guide/components/index.html">guides</a>
+  and samples. For more information about the individual Support Library classes and methods, see
+  the <code translate="no" dir="ltr"><a href="https://developer.android.com/reference/android/support/v4/app/package-summary.html">android.support</a></code> packages in the API reference.
+</p>
+
+
+<devsite-heading text="Manifest Declaration Changes" for="manifest" level="h3" link="" toc=""><h3 id="manifest" is-upgraded="">Manifest Declaration Changes</h3></devsite-heading>
+
+<p>If you are increasing the backward compatibility of your existing application to an earlier
+  version of the Android API with the Support Library, make sure to update your application's
+  manifest. Specifically, you should update the <code translate="no" dir="ltr">android:minSdkVersion</code>
+  element of the <a href="https://developer.android.com/guide/topics/manifest/uses-sdk-element.html">
+  <code translate="no" dir="ltr">&lt;uses-sdk&gt;</code></a> tag in the manifest to the new, lower version number, as
+  shown below:</p>
+
+<devsite-code dark-code=""><pre class="lang-xml" translate="no" dir="ltr" is-upgraded=""><span class="pln">&nbsp; </span><span class="tag">&lt;uses-sdk</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="atn">android:minSdkVersion</span><span class="pun">=</span><span class="atv">"</span><b><span class="atv">14</span></b><span class="atv">"</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="atn">android:targetSdkVersion</span><span class="pun">=</span><span class="atv">"23"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln"><br></span></pre><div class="devsite-code-buttons-container"><button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-title="Dark code theme"></button><button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light" data-category="Site-Wide Custom Events" data-label="Light Code Toggle" track-type="exampleCode" track-name="lightCodeToggle" data-title="Light code theme"></button><button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-title="Copy"></button></div></devsite-code>
+
+<p>The manifest setting tells Google Play that your application can be installed on devices with Android
+  4.0 (API level 14) and higher.  </p>
+
+<p>If you are using Gradle build files, the <code translate="no" dir="ltr">minSdkVersion</code> setting in the build file
+  overrides the manifest settings.  </p>
+
+<devsite-code dark-code=""><pre class="lang-groovy" translate="no" dir="ltr" is-upgraded=""><span class="pln">apply plugin</span><span class="pun">:</span><span class="pln"> </span><span class="str">'com.android.application'</span><span class="pln"><br><br>android </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">...</span><span class="pln"><br><br>&nbsp; &nbsp; defaultConfig </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; minSdkVersion </span><span class="lit">16</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">...</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">...</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br></span></pre><div class="devsite-code-buttons-container"><button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-title="Dark code theme"></button><button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light" data-category="Site-Wide Custom Events" data-label="Light Code Toggle" track-type="exampleCode" track-name="lightCodeToggle" data-title="Light code theme"></button><button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-title="Copy"></button></div></devsite-code>
+
+<p>In this case, the build file setting tells Google Play that the default build variant of your
+  application can be installed on devices with Android 4.1 (API level 16) and higher. For more
+  information about build variants, see
+  <a href="https://developer.android.com/studio/build/index.html">Build System Overview</a>. </p>
+
+<p class="note">
+  <strong>Note:</strong> If you are including several support libraries, the
+  minimum SDK version must be the <em>highest</em> version required by any of
+  the specified libraries. For example, if your app includes both the <a href="https://developer.android.com/topic/libraries/support-library/features.html#v14-preference">v14 Preference Support library</a> and the
+  <a href="https://developer.android.com/topic/libraries/support-library/features.html#v17-leanback">v17 Leanback library</a>, your minimum
+  SDK version must be 17 or higher.
+</p>
+
+
+
+          </div>
+
+          <div class="devsite-steps">
+    <div class="steps-previous steps-direction">
+    <a class="steps-link" href="https://developer.android.com/topic/libraries/support-library/packages">
+            <div class="steps-link-direction">Previous</div>
+      <span class="steps-link-arrow steps-link-arrow-left material-icons" aria-hidden="true">
+        arrow_back
+      </span>
+      <span class="steps-link-title-previous steps-link-title">
+        Packages
+      </span>
+    </a>
+  </div>
+      <div class="steps-next steps-direction">
+    <a class="steps-link" href="https://developer.android.com/topic/libraries/support-library/revisions">
+            <div class="steps-link-direction">Next</div>
+      <span class="steps-link-title-next steps-link-title">
+        Recent Revisions
+      </span>
+      <span class="steps-link-arrow steps-link-arrow-right material-icons" aria-hidden="true">
+        arrow_forward
+      </span>
+    </a>
+  </div>
+  </div>
+    
+                   <devsite-page-rating position="footer" selected-rating="0" hover-rating-star="0">
+         <div><div class="devsite-rating-caption">Was this page helpful?</div><div class="devsite-rating-stars"><div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="1" role="button" data-title="Unusable documentation" aria-label="Site content star ratings, rating 1 out of 5"></div><div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="2" role="button" data-title="Poor documentation" aria-label="Site content star ratings, rating 2 out of 5"></div><div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="3" role="button" data-title="OK documentation" aria-label="Site content star ratings, rating 3 out of 5"></div><div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="4" role="button" data-title="Good documentation" aria-label="Site content star ratings, rating 4 out of 5"></div><div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="5" role="button" data-title="Excellent documentation" aria-label="Site content star ratings, rating 5 out of 5"></div></div><div class="devsite-rating-internal"><span class="devsite-rating-stats"></span></div></div></devsite-page-rating>
+                   
+          </article>
+</article>
+
+<devsite-content-footer class="nocontent">
+  <p>Content and code samples on this page are subject to the licenses described in the <a href="https://developer.android.com/license">Content License</a>. Java is a registered trademark of Oracle and/or its affiliates.</p>  <p>Last updated 2019-12-27.</p></devsite-content-footer>
+
+
+
+                      </devsite-content>
+        </main>
+        <devsite-footer-promos class="devsite-footer">
+                      <nav class="devsite-footer-promos nocontent">
+  <ul class="devsite-footer-promos-list">
+        <li class="devsite-footer-promo">
+      <a href="https://twitter.com/AndroidDev" class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Twitter Promo">
+                        <img class="devsite-footer-promo-icon" src="./Support Library Setup  _  Android Developers_files/logo-twitter.svg" alt="Twitter">
+                Twitter
+      </a>
+      <div class="devsite-footer-promo-description">Follow @AndroidDev on Twitter</div>
+    </li>
+        <li class="devsite-footer-promo">
+      <a href="https://www.youtube.com/user/androiddevelopers" class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer YouTube Promo">
+                        <img class="devsite-footer-promo-icon" src="./Support Library Setup  _  Android Developers_files/youtube_48dp.png" alt="YouTube">
+                YouTube
+      </a>
+      <div class="devsite-footer-promo-description">Check out Android Developers on YouTube</div>
+    </li>
+      </ul>
+</nav>
+
+                  </devsite-footer-promos>
+        <devsite-footer-linkboxes class="devsite-footer">
+                      <nav class="devsite-footer-linkboxes nocontent">
+    <ul class="devsite-footer-linkboxes-list">
+        <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading">More Android</h3>      <ul class="devsite-footer-linkbox-list">
+                <li class="devsite-footer-linkbox-item">
+          <a href="https://www.android.com/" class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)">
+            Android
+          </a>
+        </li>
+                <li class="devsite-footer-linkbox-item">
+          <a href="https://www.android.com/enterprise/" class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)">
+            Enterprise
+          </a>
+        </li>
+                <li class="devsite-footer-linkbox-item">
+          <a href="https://www.android.com/security-center/" class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)">
+            Security
+          </a>
+        </li>
+                <li class="devsite-footer-linkbox-item">
+          <a href="https://source.android.com/" class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)">
+            Source
+          </a>
+        </li>
+              </ul>
+    </li>
+        <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading">Support</h3>      <ul class="devsite-footer-linkbox-list">
+                <li class="devsite-footer-linkbox-item">
+          <a href="https://issuetracker.google.com/issues/new?component=190923&amp;template=841312" class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)">
+            Report platform bug
+          </a>
+        </li>
+                <li class="devsite-footer-linkbox-item">
+          <a href="https://issuetracker.google.com/issues/new?component=192697" class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)">
+            Report documentation bug
+          </a>
+        </li>
+                <li class="devsite-footer-linkbox-item">
+          <a href="https://support.google.com/googleplay/android-developer" class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)">
+            Google Play support
+          </a>
+        </li>
+                <li class="devsite-footer-linkbox-item">
+          <a href="https://google.qualtrics.com/jfe/form/SV_ewWXIoEVLBcyp7f??reserved=1&amp;utm_source=FooterLink&amp;Q_Language=en&amp;utm_medium=own_srch&amp;utm_campaign=developer.android.com&amp;utm_term=0&amp;utm_content=0&amp;productTag=reg&amp;campaignDate=may19&amp;pType=devel&amp;referral_code=gV420370" class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)">
+            Join research studies
+          </a>
+        </li>
+              </ul>
+    </li>
+        <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading">Documentation</h3>      <ul class="devsite-footer-linkbox-list">
+                <li class="devsite-footer-linkbox-item">
+          <a href="https://developer.android.com/guide" class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)">
+            Developer guides
+          </a>
+        </li>
+                <li class="devsite-footer-linkbox-item">
+          <a href="https://developer.android.com/design" class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)">
+            Design guides
+          </a>
+        </li>
+                <li class="devsite-footer-linkbox-item">
+          <a href="https://developer.android.com/reference" class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)">
+            API reference
+          </a>
+        </li>
+                <li class="devsite-footer-linkbox-item">
+          <a href="https://developer.android.com/samples" class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)">
+            Samples
+          </a>
+        </li>
+                <li class="devsite-footer-linkbox-item">
+          <a href="https://developer.android.com/studio/intro" class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 5)">
+            Android Studio
+          </a>
+        </li>
+              </ul>
+    </li>
+      </ul>
+  </nav>
+                  </devsite-footer-linkboxes>
+        <devsite-footer-utility class="devsite-footer">
+                      
+<div class="devsite-footer-utility nocontent">
+    <nav class="devsite-footer-sites">
+    <a href="https://developers.google.com/" class="devsite-footer-sites-logo-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Google Developers Link">
+      <img class="devsite-footer-sites-logo" src="./Support Library Setup  _  Android Developers_files/lockup-developers.svg" alt="Google Developers">
+    </a>
+    <ul class="devsite-footer-sites-list">
+            <li class="devsite-footer-sites-item">
+        <a href="https://developer.android.com/" class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Link">
+          Android
+        </a>
+      </li>
+            <li class="devsite-footer-sites-item">
+        <a href="https://developer.chrome.com/home" class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Chrome Link">
+          Chrome
+        </a>
+      </li>
+            <li class="devsite-footer-sites-item">
+        <a href="https://firebase.google.com/" class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Firebase Link">
+          Firebase
+        </a>
+      </li>
+            <li class="devsite-footer-sites-item">
+        <a href="https://cloud.google.com/" class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Google Cloud Platform Link">
+          Google Cloud Platform
+        </a>
+      </li>
+            <li class="devsite-footer-sites-item">
+        <a href="https://developers.google.com/products/" class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer All products Link">
+          All products
+        </a>
+      </li>
+          </ul>
+  </nav>
+  
+  <nav class="devsite-footer-utility-links">
+        <ul class="devsite-footer-utility-list">
+            <li class="devsite-footer-utility-item
+                 ">
+                        <a class="devsite-footer-utility-link
+                  gc-analytics-event" href="https://policies.google.com/privacy" data-category="Site-Wide Custom Events" data-label="Footer Privacy link">
+          Privacy
+        </a>
+              </li>
+            <li class="devsite-footer-utility-item
+                 ">
+                        <a class="devsite-footer-utility-link
+                  gc-analytics-event" href="https://developer.android.com/license" data-category="Site-Wide Custom Events" data-label="Footer License link">
+          License
+        </a>
+              </li>
+            <li class="devsite-footer-utility-item
+                 ">
+                        <a class="devsite-footer-utility-link
+                  gc-analytics-event" href="https://developer.android.com/distribute/marketing-tools/brand-guidelines" data-category="Site-Wide Custom Events" data-label="Footer Brand guidelines link">
+          Brand guidelines
+        </a>
+              </li>
+            <li class="devsite-footer-utility-item
+                 devsite-footer-utility-button">
+                <span class="devsite-footer-utility-description">Get news and tips by email</span>
+                        <a class="devsite-footer-utility-link
+                  gc-analytics-event" href="https://developer.android.com/updates" data-category="Site-Wide Custom Events" data-label="Footer Subscribe link">
+          Subscribe
+        </a>
+              </li>
+          </ul>
+    
+    <devsite-language-selector>
+  <devsite-select class="devsite-language-selector-menu">
+    <select class="devsite-language-selector-select" name="language" track-name="click" track-type="languageSelector">
+                <option>Language</option>
+              <option value="id" track-metadata-original-language="en" track-metadata-selected-language="id" track-name="changed" track-type="languageSelector">
+        Bahasa Indonesia
+      </option>
+          <option value="de" track-metadata-original-language="en" track-metadata-selected-language="de" track-name="changed" track-type="languageSelector">
+        Deutsch
+      </option>
+          <option value="en" track-metadata-original-language="en" track-metadata-selected-language="en" track-name="changed" track-type="languageSelector">
+        English
+      </option>
+          <option value="es" track-metadata-original-language="en" track-metadata-selected-language="es" track-name="changed" track-type="languageSelector">
+        Español
+      </option>
+          <option value="es_419" track-metadata-original-language="en" track-metadata-selected-language="es_419" track-name="changed" track-type="languageSelector">
+        Español – América Latina
+      </option>
+          <option value="fr" track-metadata-original-language="en" track-metadata-selected-language="fr" track-name="changed" track-type="languageSelector">
+        Français
+      </option>
+          <option value="pt_br" track-metadata-original-language="en" track-metadata-selected-language="pt_br" track-name="changed" track-type="languageSelector">
+        Português – Brasil
+      </option>
+          <option value="vi" track-metadata-original-language="en" track-metadata-selected-language="vi" track-name="changed" track-type="languageSelector">
+        Tiếng Việt
+      </option>
+          <option value="tr" track-metadata-original-language="en" track-metadata-selected-language="tr" track-name="changed" track-type="languageSelector">
+        Türkçe
+      </option>
+          <option value="ru" track-metadata-original-language="en" track-metadata-selected-language="ru" track-name="changed" track-type="languageSelector">
+        Русский
+      </option>
+          <option value="th" track-metadata-original-language="en" track-metadata-selected-language="th" track-name="changed" track-type="languageSelector">
+        ภาษาไทย
+      </option>
+          <option value="zh_cn" track-metadata-original-language="en" track-metadata-selected-language="zh_cn" track-name="changed" track-type="languageSelector">
+        中文 – 简体
+      </option>
+          <option value="zh_tw" track-metadata-original-language="en" track-metadata-selected-language="zh_tw" track-name="changed" track-type="languageSelector">
+        中文 – 繁體
+      </option>
+          <option value="ja" track-metadata-original-language="en" track-metadata-selected-language="ja" track-name="changed" track-type="languageSelector">
+        日本語
+      </option>
+          <option value="ko" track-metadata-original-language="en" track-metadata-selected-language="ko" track-name="changed" track-type="languageSelector">
+        한국어
+      </option>
+        </select>
+  <div class="devsite-select"><button type="button" class="devsite-select-toggle">Language</button><ul class="devsite-select-list" scrollbars=""><li class="devsite-select-item" data-index="0">Language</li><li class="devsite-select-item" data-index="1">Bahasa Indonesia</li><li class="devsite-select-item" data-index="2">Deutsch</li><li class="devsite-select-item" data-index="3">English</li><li class="devsite-select-item" data-index="4">Español</li><li class="devsite-select-item" data-index="5">Español – América Latina</li><li class="devsite-select-item" data-index="6">Français</li><li class="devsite-select-item" data-index="7">Português – Brasil</li><li class="devsite-select-item" data-index="8">Tiếng Việt</li><li class="devsite-select-item" data-index="9">Türkçe</li><li class="devsite-select-item" data-index="10">Русский</li><li class="devsite-select-item" data-index="11">ภาษาไทย</li><li class="devsite-select-item" data-index="12">中文 – 简体</li><li class="devsite-select-item" data-index="13">中文 – 繁體</li><li class="devsite-select-item" data-index="14">日本語</li><li class="devsite-select-item" data-index="15">한국어</li></ul></div></devsite-select>
+</devsite-language-selector>
+
+  </nav>
+</div>
+                  </devsite-footer-utility>
+      </section></section>
+    <devsite-sitemask></devsite-sitemask>
+    <devsite-snackbar></devsite-snackbar>
+    <devsite-tooltip></devsite-tooltip>
+    <devsite-heading-link></devsite-heading-link>
+    <devsite-analytics>
+              <script async="" src="./Support Library Setup  _  Android Developers_files/app_loader.js.download"></script><script type="application/json" analytics="">[{"metrics": {"ratings_value": "metric1", "ratings_count": "metric2"}, "dimensions": {"dimension6": "en", "dimension4": "Android Developers", "dimension5": "en", "dimension3": false, "dimension1": "Signed out"}, "gaid": "UA-5831155-1"}, {"metrics": {"ratings_value": "metric1", "ratings_count": "metric2"}, "dimensions": {"dimension6": "en", "dimension4": "Android Developers", "dimension5": "en", "dimension3": false, "dimension1": "Signed out"}, "gaid": "UA-49880327-2"}]</script>
+<script type="application/json" gtm="">{"parameters": {"freeTrialEligibleUser": "False", "language": {"requested": "en", "served": "en"}, "projectName": "Android Developers", "scriptsafe": null, "signedIn": "False", "internalUser": "False"}, "tags": ["GTM-KMSWPCJ"]}</script>
+          </devsite-analytics>
+        <script>
+    (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/v0e4e104495105e7f1e0709003bc8740507426db77c74cec8d9625a7c35862984/js/app_loader.js', '[3,"en",null,"/js/devsite_app.js","https://www.gstatic.com/devrel-devsite/prod/v0e4e104495105e7f1e0709003bc8740507426db77c74cec8d9625a7c35862984","https://www.gstatic.com/devrel-devsite/prod/v0e4e104495105e7f1e0709003bc8740507426db77c74cec8d9625a7c35862984/android","https://android-dot-devsite-v2-prod.appspot.com",null,null,["/_pwa/android/manifest.json","/_static/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/v0e4e104495105e7f1e0709003bc8740507426db77c74cec8d9625a7c35862984/android/images/favicon.png","https://www.gstatic.com/devrel-devsite/prod/v0e4e104495105e7f1e0709003bc8740507426db77c74cec8d9625a7c35862984/android/images/lockup.svg","https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700|Material+Icons"],1]')
+  </script>  
+</body></html>
